@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title></title>
+</head>
+
+<body>
+    <div class="Particulas"></div>
+
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Início</a>
+            </li>
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+            <li>
+                <a href="#experiencias" class="menu-link">Experiências</a>
+            </li>
+            <li>
+                <a href="#contato" class="menu-link">Contato</a>
+            </li>
+        </ul>
+
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+        <img src="Imagens do Projeto/Foto de Perfil do Portifolio.png.jpg" alt="Foto de Perfil do Portifolio"
+            class="foto-perfil">
+        <h1>Arthur Barroso Neiva</h1>
+        <p class="cabecalho-sub-titulo"> Desenvolvedor Back-End</p>
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre Mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">
+                Meu Nome é Arthur Barroso Neiva tenho 19 anos, desde dos 13 anos já me interessava pela montagem de
+                computadores e também pela parte de segurança da informação. Faço um curso de Inglês na escola Wirzard e
+                estou cursando Analise e Desenvolvimento de Sistemas na Universidade CEUB. Trabalho no gerenciamento de
+                transmissões online e como sonoplasta na Igreja de Cristo na Capital e faço também consultorias de
+                Montagem e Manutenção de Computadores a 1 ano.
+
+            </p>
+        </div>
+    </section>
+
+    <section id="experiencias" class="experiencias">
+        <h2 class="experiencias-titulo">Experiências</h2>
+        <div class="experiencias-caixa">
+
+            <div class="experiencias-card">
+                <img src="Imagens do Projeto/Experiência1.png" alt="Experiência 1" class="experiencias-imagem">
+                <div class="caixa-textos-experiencias">
+                    <h3 class="info-experiencias">Consultor de Montagem e Manutenção de Computadores</h3>
+                    <p class="experiencias-paragrafo">Garantir desempenho, estabilidade e custo-benefício, com
+                        orientações
+                        técnicas sob medida para cada necessidade. Realizo diagnósticos precisos, upgrades, limpeza
+                        preventiva, otimização de sistemas e suporte contínuo para que seu equipamento funcione sempre
+                        no
+                        máximo desempenho.</p>
+                </div>
+            </div>
+
+            <div class="experiencias-card">
+                <img src="Imagens do Projeto/Experiência2.png" alt="Experiência 1" class="experiencias-imagem">
+                <div class="caixa-textos-experiencias">
+                    <h3 class="info-experiencias">sonoplasta</h3>
+                    <p class="experiencias-paragrafo">Responsável pela criação, edição e operação de efeitos sonoros,
+                        trilhas e ambientações que enriquecem produções audiovisuais e eventos ao vivo. Com domínio
+                        técnico
+                        e sensibilidade artística, atuo na captação, mixagem e manipulação de áudio para garantir a
+                        qualidade sonora e a imersão do público.</p>
+                </div>
+            </div>
+
+            <div class="experiencias-card">
+                <img src="Imagens do Projeto/Experiência3.png" alt="Experiência 1" class="experiencias-imagem">
+                <div class="caixa-textos-experiencias">
+                    <h3 class="info-experiencias">Gerenciamento de Transmissões Online</h3>
+                    <p class="experiencias-paragrafo">Atuo no planejamento, configuração e execução de transmissões ao
+                        vivo
+                        com foco em qualidade, estabilidade e interatividade. Gerencio equipamentos, softwares de
+                        streaming,
+                        cenários virtuais e integração com plataformas como YouTube, Twitch e redes sociais, garantindo
+                        uma
+                        experiência fluida e profissional para o público.</p>
+                </div>
+            </div>
+    </section>
+
+    <section id="contato" class="Contato">
+        <h2 class="Contato-titulo">Entre em Contatos</h2>
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+            <div class="grupo-form">
+                <input placeholder="Nome" class="campo-form">
+            </div>
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite sua mensagem" rows="4" id="mensagem"></textarea>
+            </div>
+
+            <button type="submit" class="botao-form">Enviar o WhatsApp</button>
+        </form>
+    </section>
+
+    <script>
+
+        function enviarWhats(event) {
+            event.preventDefault()
+            const nome = document.getElementById('nome');
+            const mensagem = document.getElementById('mensagem');
+            const telefone = '5561996372006'
+
+            const texto = `Olá! Me chamo ${nome}, ${mensagem}`
+            const msgFormatada = encodeURIComponent(texto)
+            const url = `https://wa.me/${telefone}?text=${msgFormatada}`
+
+            console.log(url)
+
+
+            window.open(url, '_blank')
+        }
+
+    </script>
+</body>
+</html>
